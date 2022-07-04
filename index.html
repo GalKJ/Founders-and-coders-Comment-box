@@ -7,7 +7,7 @@
     <title>Comment Box</title>
   </head>
   <body>
-    <form action="">
+    <form id="form" action="">
       <label for="fname">First name:</label><br />
       <input type="text" id="fname" name="fname" /><br />
       <label for="lname">Last name:</label><br />
@@ -24,11 +24,15 @@
       <br />
       <br />
 
-      <textarea name="message" style="width: 200px; height: 200px">
-The cat was playing in the garden.</textarea
-      >
+      <textarea
+        id="textArea"
+        name="message"
+        maxlength="140"
+        size="140"
+        placeholder="Leave a comment"
+      ></textarea>
       <br />
-      <input type="submit" id="demo" />
+      <input type="submit" value="Click to submit" id="demo" />
     </form>
 
     <p id="comBox"></p>
