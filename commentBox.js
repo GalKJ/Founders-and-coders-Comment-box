@@ -1,69 +1,76 @@
-const subButts = document.querySelector('#subBut');
-let firstName = document.querySelector('#fname');
-let textArea = document.querySelector('#textArea');
-let commentBox = document.querySelector('#comBox');
 let form = document.querySelector('#form');
-let charCount = document.querySelector('#charCount');
+
+let firstName = document.querySelector('#fname');
+let lastName = document.querySelector('#lname');
+let comment = document.querySelector('#comment');
 let charCount2 = document.querySelector('#charCount2');
-let testComment = document.querySelector('#comment');
+
+const subButts = document.querySelector('#subBut');
+
+let commentBox = document.querySelector('#comBox');
 let nameBox = document.querySelector('#nameBox');
+
+
+  //Prevent default on form
 
   form.addEventListener('submit', e => {
       e.preventDefault(); 
   });
 
-  // textArea.addEventListener("input", cCount);
+  
+  //Event listener and func for character counter
 
-  // function cCount() {
-  //   charCount.innerHTML = textArea.textLength;
-  // }
-
-  testComment.addEventListener("input", cCount2);
+  comment.addEventListener("input", cCount2);
 
   function cCount2() {
-    charCount2.innerHTML = testComment.value.length;
+    charCount2.innerHTML = comment.value.length;
   }
 
-  let myArray = "";
 
-  testComment.addEventListener("input", alert);
+  //Event listener and func to populate comment array, add and remove class of 'exceededChars' for CSS
 
-  function alert() {
-    myArray = testComment.value.split('');
-    // if (myArray.length > 5) {
-    //   testComment.classList.add("exceededChars")
-    // }
-    if (myArray.length > 5) {
-      testComment.classList.add("exceededChars")
-    } else {
-      testComment.classList.remove("exceededChars")
-    }
-  }
-
-  subButts.addEventListener("click", combox);
-
-  function combox() {
-    commentBox.textContent = myArray.join("");
-    // commentBox.textContent = firstName.textContent;
-    
-  }
-
-  let myArray2 = "";
+  let fNameArray = "";
 
   firstName.addEventListener("input", alert2);
 
   function alert2() {
-    myArray2 = firstName.value.split('');
+    fNameArray = firstName.value.split('');
   }
 
   subButts.addEventListener("click", namebox);
 
   function namebox() {
-    nameBox.textContent = myArray2.join("");
-    // commentBox.textContent = firstName.textContent;
-    
+    nameBox.textContent = fNameArray.join("");
   }
 
-  // textArea.addEventListener("keydown", keyCount); 
+
+  //Event listener and func to populate comment array, add and remove class of 'exceededChars' for CSS
+
+  let commentArray = "";
+
+  comment.addEventListener("input", alert);
+
+  function alert() {
+    commentArray = comment.value.split('');
+    
+    if (commentArray.length > 5) {
+      comment.classList.add("exceededChars")
+    } else {
+      comment.classList.remove("exceededChars")
+    }
+  }
+
+
+  //Submit button event listener to post comment
+
+  subButts.addEventListener("click", combox);
+
+  function combox() {
+    commentBox.textContent = commentArray.join(""); 
+  }
+
+  
+
+   
   
   
