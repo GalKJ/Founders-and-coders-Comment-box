@@ -71,7 +71,7 @@ let commentBox = document.querySelector('#comBox');
   function alert() {
     commentArray = comment.value.split('');
     
-    if (commentArray.length > 5) {
+    if (commentArray.length > 140) {
       comment.classList.add("exceededChars")
     } else {
       comment.classList.remove("exceededChars")

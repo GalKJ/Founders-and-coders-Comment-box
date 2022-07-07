@@ -7,6 +7,19 @@ body {
 h1 {
     text-align: center;
 }
+
+#subBut {
+    transition: all 1.5s ease;
+}
+
+#subBut:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    /* transform: scale(1.03); */
+    transition: all 1s ease;
+}
+
 .nameParas {
     display: flex;
     gap: 0.2rem;
