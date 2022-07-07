@@ -1,4 +1,4 @@
-const subButts = document.querySelector('#demo');
+const subButts = document.querySelector('#subBut');
 let firstName = document.querySelector('#fname');
 let textArea = document.querySelector('#textArea');
 let commentBox = document.querySelector('#comBox');
@@ -6,7 +6,7 @@ let form = document.querySelector('#form');
 let charCount = document.querySelector('#charCount');
 let charCount2 = document.querySelector('#charCount2');
 let testComment = document.querySelector('#comment');
-
+let nameBox = document.querySelector('#nameBox');
 
   form.addEventListener('submit', e => {
       e.preventDefault(); 
@@ -30,9 +30,9 @@ let testComment = document.querySelector('#comment');
 
   function alert() {
     myArray = testComment.value.split('');
-    if (myArray.length > 5) {
-      testComment.classList.add("exceededChars")
-    }
+    // if (myArray.length > 5) {
+    //   testComment.classList.add("exceededChars")
+    // }
     if (myArray.length > 5) {
       testComment.classList.add("exceededChars")
     } else {
@@ -40,7 +40,29 @@ let testComment = document.querySelector('#comment');
     }
   }
 
-  
+  subButts.addEventListener("click", combox);
+
+  function combox() {
+    commentBox.textContent = myArray.join("");
+    // commentBox.textContent = firstName.textContent;
+    
+  }
+
+  let myArray2 = "";
+
+  firstName.addEventListener("input", alert2);
+
+  function alert2() {
+    myArray2 = firstName.value.split('');
+  }
+
+  subButts.addEventListener("click", namebox);
+
+  function namebox() {
+    nameBox.textContent = myArray2.join("");
+    // commentBox.textContent = firstName.textContent;
+    
+  }
 
   // textArea.addEventListener("keydown", keyCount); 
   
