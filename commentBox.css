@@ -1,0 +1,6 @@
+.exceededChars {
+    color: firebrick;
+    border-style: dashed;
+    border-color: firebrick;
+    outline: none;
+}
