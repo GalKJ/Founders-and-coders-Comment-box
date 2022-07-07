@@ -1,6 +1,25 @@
+
+body {
+    width: 90vw;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+.nameParas {
+    display: flex;
+    gap: 0.2rem;
+}
+
+#comBox {
+    margin: 0;
+}
+
 .exceededChars {
     color: firebrick;
     border-style: dashed;
     border-color: firebrick;
     outline: none;
 }
+

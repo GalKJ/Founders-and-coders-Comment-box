@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./commentBox.css" />
   </head>
   <body>
+    <header>
+      <h1>Comment Box</h1>
+    </header>
+
     <form id="form" action="">
       <label for="fname">First name:</label><br />
       <input type="text" id="fname" name="fname" autofocus />
@@ -47,9 +51,11 @@
       <input type="submit" value="Click to submit" id="subBut" />
     </form>
 
-    <p id="nameBox"></p>
+    <section class="nameParas">
+      <p id="fNameBox"></p>
 
-    <br />
+      <p id="lNameBox"></p>
+    </section>
 
     <p id="comBox"></p>
 

@@ -7,8 +7,9 @@ let charCount2 = document.querySelector('#charCount2');
 
 const subButts = document.querySelector('#subBut');
 
+let fNameBox = document.querySelector('#fNameBox');
+let lNameBox = document.querySelector('#lNameBox');
 let commentBox = document.querySelector('#comBox');
-let nameBox = document.querySelector('#nameBox');
 
 
   //Prevent default on form
@@ -27,7 +28,7 @@ let nameBox = document.querySelector('#nameBox');
   }
 
 
-  //Event listener and func to populate comment array, add and remove class of 'exceededChars' for CSS
+  //Event listener and funcs to populate first name array and fname paragraph
 
   let fNameArray = "";
 
@@ -40,7 +41,24 @@ let nameBox = document.querySelector('#nameBox');
   subButts.addEventListener("click", namebox);
 
   function namebox() {
-    nameBox.textContent = fNameArray.join("");
+    fNameBox.textContent = fNameArray.join("");
+  }
+
+
+  //Event listener and func to populate last name array and lname paragraph
+
+  let lNameArray = "";
+
+  lastName.addEventListener("input", alert3);
+
+  function alert3() {
+    lNameArray = lastName.value.split('');
+  }
+
+  subButts.addEventListener("click", namebox2);
+
+  function namebox2() {
+    lNameBox.textContent = lNameArray.join("");
   }
 
 
@@ -61,7 +79,7 @@ let nameBox = document.querySelector('#nameBox');
   }
 
 
-  //Submit button event listener to post comment
+  //Submit button event listener to populate comment paragraph
 
   subButts.addEventListener("click", combox);
 
