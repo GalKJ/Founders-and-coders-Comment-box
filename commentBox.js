@@ -3,7 +3,7 @@ let form = document.querySelector('#form');
 let firstName = document.querySelector('#fname');
 let lastName = document.querySelector('#lname');
 let comment = document.querySelector('#comment');
-let charCount2 = document.querySelector('#charCount2');
+
 
 const subButts = document.querySelector('#subBut');
 
@@ -19,11 +19,13 @@ let commentBox = document.querySelector('#comBox');
   });
 
   
-  //Event listener and func for character counter
+  //Event listener and function for character counter
 
   comment.addEventListener("input", cCount2);
 
   function cCount2() {
+    let charCount2 = document.querySelector('#charCount2');
+    
     charCount2.innerHTML = comment.value.length;
   }
 
