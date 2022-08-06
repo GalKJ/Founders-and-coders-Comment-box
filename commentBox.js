@@ -1,9 +1,9 @@
+// Select elements 
 let form = document.querySelector('#form');
 
 let firstName = document.querySelector('#fname');
 let lastName = document.querySelector('#lname');
 let comment = document.querySelector('#comment');
-
 
 const subButts = document.querySelector('#subBut');
 
@@ -11,15 +11,18 @@ let fNameBox = document.querySelector('#fNameBox');
 let lNameBox = document.querySelector('#lNameBox');
 let commentBox = document.querySelector('#comBox');
 
+// Declare empty variables to be used as arrays
+let fNameArray;
+let lNameArray;
 
-  //Prevent default on form
+//Add prevent default on form element
 
   form.addEventListener('submit', e => {
       e.preventDefault(); 
   });
 
   
-  //Event listener and function for character counter
+//Add event listener to comment input and a function to count the users characters 
 
   comment.addEventListener("input", cCount2);
 
@@ -30,13 +33,13 @@ let commentBox = document.querySelector('#comBox');
   }
 
 
-  //Event listener and funcs to populate first name array and fname paragraph
+  //Add event listener and funcs to populate first name array and fname paragraph
 
-  let fNameArray = "";
+  
 
-  firstName.addEventListener("input", alert2);
+  firstName.addEventListener("input", nameInputSplit);
 
-  function alert2() {
+  function nameInputSplit() {
     fNameArray = firstName.value.split('');
   }
 
@@ -49,17 +52,18 @@ let commentBox = document.querySelector('#comBox');
 
   //Event listener and func to populate last name array and lname paragraph
 
-  let lNameArray = "";
-
+  
   lastName.addEventListener("input", alert3);
-
+  
   function alert3() {
+    
+
     lNameArray = lastName.value.split('');
   }
 
-  subButts.addEventListener("click", namebox2);
+  subButts.addEventListener("click", nameBox);
 
-  function namebox2() {
+  function nameBox() {
     lNameBox.textContent = lNameArray.join("");
   }
 
