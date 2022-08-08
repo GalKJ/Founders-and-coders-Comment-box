@@ -1,4 +1,5 @@
 // Select elements 
+
 let form = document.querySelector('#form');
 
 let firstName = document.querySelector('#fname');
@@ -12,10 +13,12 @@ let lNameBox = document.querySelector('#lNameBox');
 let commentBox = document.querySelector('#comBox');
 
 // Declare empty variables to be used as arrays
+
 let fNameArray;
 let lNameArray;
+let commentArray;
 
-//Add prevent default on form element
+//Add prevent default method on form element
 
   form.addEventListener('submit', e => {
       e.preventDefault(); 
@@ -33,48 +36,43 @@ let lNameArray;
   }
 
 
-  //Add event listener and funcs to populate first name array and fname paragraph
+  //Add event listener to first name input and function to populate first name array and fname paragraph
 
-  
+  firstName.addEventListener("input", fNameInputSplit);
 
-  firstName.addEventListener("input", nameInputSplit);
-
-  function nameInputSplit() {
+  function fNameInputSplit() {
     fNameArray = firstName.value.split('');
   }
 
-  subButts.addEventListener("click", namebox);
+  subButts.addEventListener("click", fNameArrayJoin);
 
-  function namebox() {
-    fNameBox.textContent = fNameArray.join("");
+  function fNameArrayJoin() {
+    fNameBox.textContent = fNameArray.join('');
   }
 
 
-  //Event listener and func to populate last name array and lname paragraph
+  //Add event listener to last name input and function to populate last name array and lname paragraph
 
   
-  lastName.addEventListener("input", alert3);
+  lastName.addEventListener("input", lNameInputSplit);
   
-  function alert3() {
+  function lNameInputSplit() {
     
-
     lNameArray = lastName.value.split('');
   }
 
-  subButts.addEventListener("click", nameBox);
+  subButts.addEventListener("click", lNameArrayJoin);
 
-  function nameBox() {
-    lNameBox.textContent = lNameArray.join("");
+  function lNameArrayJoin() {
+    lNameBox.textContent = lNameArray.join('');
   }
 
 
-  //Event listener and func to populate comment array, add and remove class of 'exceededChars' for CSS
+  //Add event listener to comment input, create function to populate comment array, add and remove class of 'exceededChars' to comment input for CSS styles
 
-  let commentArray = "";
+  comment.addEventListener("input", commentInputSplit);
 
-  comment.addEventListener("input", alert);
-
-  function alert() {
+  function commentInputSplit() {
     commentArray = comment.value.split('');
     
     if (commentArray.length > 140) {
@@ -87,9 +85,9 @@ let lNameArray;
 
   //Submit button event listener to populate comment paragraph
 
-  subButts.addEventListener("click", combox);
+  subButts.addEventListener("click", commentArrayJoin);
 
-  function combox() {
+  function commentArrayJoin() {
     commentBox.textContent = commentArray.join(""); 
   }
 
